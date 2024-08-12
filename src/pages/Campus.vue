@@ -1,78 +1,117 @@
 <template>
     <div class="Bei-top">
-        <div class="Bei-introduction">
-            <div class="Bei-CN">校园招聘</div>
-            <div class="Bei-EN">Campus Recruiment</div>
-            <div class="Bei-dsc">美团有多少年，校招就有多少年。美团创立之初，就开始招聘和培养应届生了，很多当年的应届生已经成长为业务骨干、团队负责人，成为美团的中流砥柱。 目前，校园招聘设有应届生校招、转正实习、日常实习等招聘项目。无论你在哪个年级、学什么专业，都有机会来美团学习实践，和我们一起成长，一起更好！</div>
-        </div>
-        <div class="Bei-search">
-            <input type="text" placeholder="根据关键词搜索岗位">
-            <button><span class="iconfont icon-search" style="height: 50px; width: 50px;"></span></button>
-        </div>
+        <RecruitTop :chTitle="chTitle" :enTitle="enTitle" :titleDesc="titleDesc"/>
     </div>
     <div style="display: flex;">
-        <Sift/>
-        <CampusDsc/>
+        <SiftCity/>
+        <JobList :items="items" :jobName="jobName"/>
     </div>
 </template>
 
 <script setup lang="js" name="Campus">
-    import Sift from './Sift.vue'
-    import CampusDsc from './CampusDsc.vue';
+    import SiftCity from '@/components/SiftCity.vue';
+    import JobList from '@/components/JobList.vue';
+    import RecruitTop from '@/components/RecruitTop.vue';
+    const chTitle = '校园招聘'
+    const enTitle = 'Campus Recruiment'
+    const titleDesc = '美团有多少年，校招就有多少年。美团创立之初，就开始招聘和培养应届生了，很多当年的应届生已经成长为业务骨干、团队负责人，成为美团的中流砥柱。 目前，校园招聘设有应届生校招、转正实习、日常实习等招聘项目。无论你在哪个年级、学什么专业，都有机会来美团学习实践，和我们一起成长，一起更好！'
+    const jobName = '全部校招职位(294)'
+    const items = [
+        {
+        name:'品类规划TL',
+        undergrate:'社招',
+        address:'北京',
+        time:'更新于2024/08/10',
+        duty:'岗位职责',
+        desc1:'1.负责各品类的策略制定，包括不局限于品类策略，品类规划，选品逻辑',
+        desc2:'2.基于业务理解和发展需求，不断完善各项经营和运营指标体系；并对数据监控和分析..'            
+        },
+        {
+        name:'【北斗】大模型推理引擎工程师',
+        undergrate:'应届',
+        address:'北京',
+        time:'更新于2024/07/25',
+        duty:'岗位职责',
+        desc1:'1.负责LLM大语言模型的推理优化',
+        desc2:'2.负责机器学习引擎的编译优化'
+    },
+    {
+        name:'【北斗】大模型推理引擎工程师',
+        undergrate:'应届',
+        address:'北京',
+        time:'更新于2024/07/25',
+        duty:'岗位职责',
+        desc1:'1.负责LLM大语言模型的推理优化',
+        desc2:'2.负责机器学习引擎的编译优化'
+    },
+    {
+        name:'【北斗】大模型推理引擎工程师',
+        undergrate:'应届',
+        address:'北京',
+        time:'更新于2024/07/25',
+        duty:'岗位职责',
+        desc1:'1.负责LLM大语言模型的推理优化',
+        desc2:'2.负责机器学习引擎的编译优化'
+    },
+    {
+        name:'【北斗】大模型推理引擎工程师',
+        undergrate:'应届',
+        address:'北京',
+        time:'更新于2024/07/25',
+        duty:'岗位职责',
+        desc1:'1.负责LLM大语言模型的推理优化',
+        desc2:'2.负责机器学习引擎的编译优化'
+    },
+    {
+        name:'【北斗】大模型推理引擎工程师',
+        undergrate:'应届',
+        address:'北京',
+        time:'更新于2024/07/25',
+        duty:'岗位职责',
+        desc1:'1.负责LLM大语言模型的推理优化',
+        desc2:'2.负责机器学习引擎的编译优化'
+    },
+    {
+        name:'【北斗】大模型推理引擎工程师',
+        undergrate:'应届',
+        address:'北京',
+        time:'更新于2024/07/25',
+        duty:'岗位职责',
+        desc1:'1.负责LLM大语言模型的推理优化',
+        desc2:'2.负责机器学习引擎的编译优化'
+    },
+    {
+        name:'【北斗】大模型推理引擎工程师',
+        undergrate:'应届',
+        address:'北京',
+        time:'更新于2024/07/25',
+        duty:'岗位职责',
+        desc1:'1.负责LLM大语言模型的推理优化',
+        desc2:'2.负责机器学习引擎的编译优化'
+    },
+    {
+        name:'【北斗】大模型推理引擎工程师',
+        undergrate:'应届',
+        address:'北京',
+        time:'更新于2024/07/25',
+        duty:'岗位职责',
+        desc1:'1.负责LLM大语言模型的推理优化',
+        desc2:'2.负责机器学习引擎的编译优化'
+    },
+    {
+        name:'【北斗】大模型推理引擎工程师',
+        undergrate:'应届',
+        address:'北京',
+        time:'更新于2024/07/25',
+        duty:'岗位职责',
+        desc1:'1.负责LLM大语言模型的推理优化',
+        desc2:'2.负责机器学习引擎的编译优化'
+    },
+    ]
 </script>
 
 <style>
-        .Bei-top{
+    .Bei-top{
         position: relative;
-    }
-
-    .Bei-introduction{
-        height: 476px;
-        background-image:url(https://s3plus.meituan.net/zhaopin-official-website-prod/imgs/bg/campus.png) ;
-        color: white;
-        
-    }
-    .Bei-CN{
-        font-size: 40px;
-        position: absolute;
-        top: 100px;
-        left: 30px;
-    }
-    .Bei-EN{
-        font-size: 18px;
-        color: #8a8a8a;
-        position: absolute;
-        top: 150px;
-        left: 30px;
-    }
-    .Bei-dsc{
-        font-size: 15px;
-        width: 740px;
-        height: 88px;
-        line-height: 140%;
-        position: absolute;
-        top: 200px;
-        left: 30px;
-    }
-
-    .Bei-search{
-        position: absolute;
-        top: 350px;
-        left: 30px;
-    }
-    .Bei-search input{
-        width: 600px;
-        height: 60px;
-        border-radius: 20px;
-    }
-
-    .Bei-search button{
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        position: absolute;
-        left: 540px;
-        top: 3px;
-        background-color: #ffd000;
     }
 </style>
