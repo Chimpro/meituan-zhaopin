@@ -11,7 +11,6 @@
 </template>
 
 <script setup lang="js" name="RecruitTop">
-    import {ref} from "vue"
     defineProps(['chTitle','enTitle','titleDesc'])
 </script>
 

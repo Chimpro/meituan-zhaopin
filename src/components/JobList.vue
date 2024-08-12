@@ -2,7 +2,7 @@
         <div class="container">
         <div class="jobDsc">{{jobName}}</div>
         <div class="jobs">
-            <div class="job" v-for="item in items" @click="goJobDsc">
+            <div class="job" v-for="item in items" @click="goJobDsc(item)">
                 <div class="jobcontain">
                     <div class="name">{{item.name}}</div>
                     <div class="box">{{item.undergrate}}<span>|</span>{{item.address}}<span>|</span>{{item.time}}</div>
@@ -20,8 +20,8 @@
 <script setup lang="js" name="JobList">
     import { useRouter } from 'vue-router';
     const router = useRouter()
-    function goJobDsc(){
-        router.push('/jobdsc')
+    function goJobDsc(jobInfo){
+        router.push('/jobdsc',jobInfo)
     }
     defineProps(['items','jobName'])
 </script>
