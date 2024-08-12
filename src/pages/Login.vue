@@ -53,11 +53,15 @@
 <style scoped>
     .container{
         background-color:#ffd000 ;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
     }
     .loginComponentWrap{
         display: flex;
+        margin-top: 100px;
         width: 1280px;
-        height: 524px;
         justify-content: center;
     }
     .loginComponent{

@@ -117,7 +117,9 @@
 </template>
 
 <script setup lang="js" name="CampusDsc">
-    
+    const items = [{
+        
+    },]
 </script>
 
 <style scoped>
