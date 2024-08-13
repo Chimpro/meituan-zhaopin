@@ -21,7 +21,11 @@
     import { useRouter } from 'vue-router';
     const router = useRouter()
     function goJobDsc(jobInfo){
-        router.push('/jobdsc',jobInfo)
+        router.push({
+            path:'/jobdsc',
+            query:jobInfo
+        })
+        console.log(jobInfo)
     }
     defineProps(['items','jobName'])
 </script>
